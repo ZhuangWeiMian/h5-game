@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>俄罗斯方块</title>
+    <style>
+        .background {
+            position: relative;
+            height: 600px;
+            width: 400px;
+            background-color: #f6f6f6;
+        }
+
+        .box-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 600px;
+            width: 400px;
+            z-index: 2;
+            opacity: 0;
+            /* filter: alpha(opacity=85); */
+            background-color: #333;
+        }
+
+        button {
+            position: absolute;
+            /* bottom: 50px; */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 40px;
+            line-height: 1;
+            background: #fff;
+            font-size: 24px;
+            font-weight: 400;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            z-index: 8;
+        }
+
+        .begin,
+        .continue {
+            bottom: 100px;
+        }
+
+        .begin {
+            z-index: 10;
+        }
+
+        .restart {
+            bottom: 50px;
+            visibility: hidden;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .nextLevel {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* height: 100%; */
+            /* width: 100%; */
+            background: #ccc;
+            font-size: 40px;
+            font-weight: 400;
+            color: #fff;
+            text-align: center;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background">
+        <div class="box-layer"></div>
+        <canvas id="canvas"></canvas>
+        <p>
+            <span>得分：</span>
+            <span id="score">0</span>
+        </p>
+        <button id="start" class="begin">开始游戏</button>
+        <button id="restart" class="restart">重新开始</button>
+        <p class="nextLevel">下一关</>
+    </div>
+
+    <script type="module" src="../js/index.js"></script>
+</body>
+
+</html>
